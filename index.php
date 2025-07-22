@@ -301,40 +301,190 @@ header("X-Frame-Options: DENY");
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- ... your head content ... -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brandon Chong's Activity</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #fafafa;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        .instagram-post {
+            max-width: 600px;
+            margin: 30px auto;
+            background: white;
+            border: 1px solid #dbdbdb;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .post-header {
+            display: flex;
+            align-items: center;
+            padding: 14px 16px;
+            border-bottom: 1px solid #efefef;
+        }
+        .profile-pic {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #007bff;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 12px;
+        }
+        .username {
+            font-weight: 600;
+        }
+        .post-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .post-actions {
+            padding: 10px 16px;
+            font-size: 24px;
+        }
+        .action-icon {
+            margin-right: 16px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .action-icon:hover {
+            transform: scale(1.1);
+        }
+        .post-caption {
+            padding: 0 16px 8px;
+            font-size: 14px;
+        }
+        .caption-username {
+            font-weight: 600;
+            margin-right: 5px;
+        }
+        .post-time {
+            padding: 0 16px 16px;
+            color: #8e8e8e;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        .activity-details {
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            border: 1px solid #dbdbdb;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .liked {
+            color: #ed4956;
+        }
+        .bookmarked {
+            color: #262626;
+        }
+    </style>
 </head>
 <body>
-    <div class="instagram-post">
-        <div class="post-header">
-            <div class="profile-pic">BC</div>
-            <div class="username">brandon.chong</div>
+    <div class="container py-4">
+        <div class="instagram-post">
+            <div class="post-header">
+                <div class="profile-pic">BC</div>
+                <div class="username">brandon.chong</div>
+            </div>
+            <img src="<?php echo htmlspecialchars($imageUrl); ?>" alt="<?php echo htmlspecialchars($selectedActivity['activity']); ?>" class="post-image">
+            <div class="post-actions">
+                <span class="action-icon like-btn"><i class="far fa-heart"></i></span>
+                <span class="action-icon"><i class="far fa-comment"></i></span>
+                <span class="action-icon"><i class="far fa-paper-plane"></i></span>
+                <span class="action-icon bookmark-btn ms-auto"><i class="far fa-bookmark"></i></span>
+            </div>
+            <div class="post-caption">
+                <span class="caption-username">brandon.chong</span>
+                <?php echo htmlspecialchars(trim($caption)); ?>
+            </div>
+            <div class="post-time">
+                <?php echo date('F j, Y \a\t g:i A'); ?> • Daily Routine
+            </div>
         </div>
-
-        <img src="<?php echo htmlspecialchars($imageUrl); ?>" alt="<?php echo htmlspecialchars($selectedActivity['activity']); ?>" class="post-image">
-
-        <div class="post-actions">
-            <span class="action-icon">❤️</span>
-            <span class="action-icon">💬</span>
-            <span class="action-icon">↪️</span>
-            <span class="action-icon">🔖</span>
-        </div>
-
-        <div class="post-caption">
-            <span class="caption-username">brandon.chong</span>
-            <?php echo htmlspecialchars(trim($caption)); ?>
-        </div>
-
-        <div class="post-time">
-            <?php echo date('F j, Y \a\t g:i A'); ?> • Daily Routine
+        
+        <div class="activity-details">
+            <h3><i class="far fa-calendar-alt me-2"></i>Activity Details</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong><i class="far fa-clock me-2"></i>Time:</strong> <?php echo htmlspecialchars($selectedActivity['time']); ?></p>
+                    <p><strong><i class="fas fa-running me-2"></i>Activity:</strong> <?php echo htmlspecialchars($selectedActivity['activity']); ?></p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong><i class="far fa-folder me-2"></i>Type:</strong> <?php echo htmlspecialchars($selectedActivity['type']); ?></p>
+                    <p><strong><i class="fas fa-bolt me-2"></i>Action:</strong> <?php echo htmlspecialchars($selectedActivity['actions']); ?></p>
+                </div>
+            </div>
+            <button class="btn btn-primary mt-3 share-btn"><i class="fas fa-share-alt me-2"></i>Share Activity</button>
         </div>
     </div>
 
-    <div class="activity-details">
-        <h3>📅 Activity Details</h3>
-        <p><strong>⏰ Time:</strong> <?php echo htmlspecialchars($selectedActivity['time']); ?></p>
-        <p><strong>🏃 Activity:</strong> <?php echo htmlspecialchars($selectedActivity['activity']); ?></p>
-        <p><strong>🗂️ Type:</strong> <?php echo htmlspecialchars($selectedActivity['type']); ?></p>
-        <p><strong>⚡ Action:</strong> <?php echo htmlspecialchars($selectedActivity['actions']); ?></p>
-    </div>
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Like button functionality
+            const likeBtn = document.querySelector('.like-btn');
+            likeBtn.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                icon.classList.toggle('far');
+                icon.classList.toggle('fas');
+                icon.classList.toggle('liked');
+            });
+            
+            // Bookmark button functionality
+            const bookmarkBtn = document.querySelector('.bookmark-btn');
+            bookmarkBtn.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                icon.classList.toggle('far');
+                icon.classList.toggle('fas');
+                icon.classList.toggle('bookmarked');
+            });
+            
+            // Share button functionality
+            const shareBtn = document.querySelector('.share-btn');
+            shareBtn.addEventListener('click', function() {
+                alert('Activity shared successfully!');
+                // In a real app, you would implement actual sharing functionality here
+            });
+            
+            // Double click to like the post
+            const postImage = document.querySelector('.post-image');
+            postImage.addEventListener('dblclick', function() {
+                const icon = likeBtn.querySelector('i');
+                icon.classList.remove('far');
+                icon.classList.add('fas', 'liked');
+                
+                // Add a temporary heart animation
+                const heart = document.createElement('div');
+                heart.innerHTML = '<i class="fas fa-heart"></i>';
+                heart.style.position = 'absolute';
+                heart.style.fontSize = '80px';
+                heart.style.color = 'white';
+                heart.style.opacity = '0.8';
+                heart.style.transform = 'translate(-50%, -50%)';
+                heart.style.left = '50%';
+                heart.style.top = '50%';
+                heart.style.animation = 'heartBeat 0.6s ease-out forwards';
+                
+                this.parentNode.appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, 1000);
+            });
+        });
+    </script>
 </body>
 </html>

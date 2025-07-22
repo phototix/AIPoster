@@ -299,6 +299,7 @@ if (!$id) {
     $caption = $data['caption'];
     $selectedActivity = $data['activity'];
     $imageUrl = 'generated/' . $data['image_file'];
+    $pageUrl = "https://post.brandon.my/" . urlencode(strtolower(str_replace(' ', '-', $selectedActivity['activity'])));
 
     $ogTitle = "Brandon Chong's Activity: " . $selectedActivity['activity'];
     $ogDescription = $caption . " | Time: " . $selectedActivity['time'] . " | Type: " . $selectedActivity['type'];

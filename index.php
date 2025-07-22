@@ -140,31 +140,15 @@ function generateCaption($prompt) {
 }
 
 // Generate image with DALL-E
-function describeImage($imageUrl) {
+function generateImage($prompt, $outputFile = 'output.png') {
     global $config;
 
-    $url = 'https://api.openai.com/v1/chat/completions';
+    $url = 'https://api.openai.com/v1/images/generations';
 
     $data = [
-        'model' => 'gpt-4.1-mini',
-        'messages' => [
-            [
-                'role' => 'user',
-                'content' => [
-                    [
-                        'type' => 'text',
-                        'text' => 'What is in this image?'
-                    ],
-                    [
-                        'type' => 'image_url',
-                        'image_url' => [
-                            'url' => $imageUrl
-                        ]
-                    ]
-                ]
-            ]
-        ],
-        'max_tokens' => 300
+        'model' => 'gpt-image-1',
+        'prompt' => $prompt,
+        'response_format' => 'b64_json'
     ];
 
     $options = [
@@ -183,11 +167,19 @@ function describeImage($imageUrl) {
 
     if ($response === false) {
         $error = error_get_last();
-        return "API call failed: " . ($error['message'] ?? 'Unknown error');
+        return "Image generation failed: " . ($error['message'] ?? 'Unknown error');
     }
 
     $result = json_decode($response, true);
-    return trim($result['choices'][0]['message']['content'] ?? "Unable to describe the image.");
+
+    if (!isset($result['data'][0]['b64_json'])) {
+        return "Invalid response from OpenAI image API.";
+    }
+
+    $imageData = base64_decode($result['data'][0]['b64_json']);
+    file_put_contents($outputFile, $imageData);
+
+    return $outputFile; // path to the saved image
 }
 
 // Generate content

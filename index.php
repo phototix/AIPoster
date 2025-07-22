@@ -316,26 +316,26 @@ if (!$id) {
     <title>Brandon Chong's Activity</title>
 
     <?php if ($id) { ?>
-        <!-- Open Graph / Facebook Meta Tags -->
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="<?php echo htmlspecialchars($ogUrl); ?>">
-        <meta property="og:title" content="<?php echo htmlspecialchars($ogTitle); ?>">
-        <meta property="og:description" content="<?php echo htmlspecialchars($ogDescription); ?>">
-        <meta property="og:image" content="<?php echo htmlspecialchars($ogImage); ?>">
-        <meta property="og:image:width" content="1200">
-        <meta property="og:image:height" content="630">
-        
-        <!-- Twitter Meta Tags -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta property="twitter:domain" content="example.com">
-        <meta property="twitter:url" content="<?php echo htmlspecialchars($ogUrl); ?>">
-        <meta name="twitter:title" content="<?php echo htmlspecialchars($ogTitle); ?>">
-        <meta name="twitter:description" content="<?php echo htmlspecialchars($ogDescription); ?>">
-        <meta name="twitter:image" content="<?php echo htmlspecialchars($ogImage); ?>">
-        
-        <!-- WhatsApp Specific -->
-        <meta property="og:site_name" content="Brandon's Activity Tracker">
-        <meta property="og:image:alt" content="<?php echo htmlspecialchars($selectedActivity['activity']); ?>">
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<?php echo htmlspecialchars($ogUrl); ?>">
+    <meta property="og:title" content="<?php echo htmlspecialchars($ogTitle); ?>">
+    <meta property="og:description" content="<?php echo htmlspecialchars($ogDescription); ?>">
+    <meta property="og:image" content="<?php echo htmlspecialchars($ogImage); ?>">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="example.com">
+    <meta property="twitter:url" content="<?php echo htmlspecialchars($ogUrl); ?>">
+    <meta name="twitter:title" content="<?php echo htmlspecialchars($ogTitle); ?>">
+    <meta name="twitter:description" content="<?php echo htmlspecialchars($ogDescription); ?>">
+    <meta name="twitter:image" content="<?php echo htmlspecialchars($ogImage); ?>">
+    
+    <!-- WhatsApp Specific -->
+    <meta property="og:site_name" content="Brandon's Activity Tracker">
+    <meta property="og:image:alt" content="<?php echo htmlspecialchars($selectedActivity['activity']); ?>">
     <?php } ?>
 
     <!-- Bootstrap 5 CSS CDN -->
@@ -447,7 +447,7 @@ if (!$id) {
             </div>
         </div>
         
-        <div class="activity-details">
+        <div class="activity-details" style="display:none;">
             <h3><i class="far fa-calendar-alt me-2"></i>Activity Details</h3>
             <div class="row">
                 <div class="col-md-6">

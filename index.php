@@ -313,8 +313,8 @@ if (!$id) {
         $jsonData = [
             'caption' => $caption,
             'activity' => $selectedActivity,
-            'date' => date('Y-m-d'),
-            'time' => date('H:i:s'),
+            'create_date' => date('Y-m-d'),
+            'create_time' => date('H:i:s'),
             'image_file' => $id . '.jpg'
         ];
         file_put_contents(GENERATED_DIR . $id . '.json', json_encode($jsonData, JSON_PRETTY_PRINT));

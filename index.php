@@ -59,6 +59,20 @@ session_start([
     'cookie_samesite' => 'Strict'
 ]);
 
+function writeLog($message, $type = 'INFO') {
+    $logDir = __DIR__ . '/logs';
+    $logFile = $logDir . '/error.log';
+
+    if (!file_exists($logDir)) {
+        mkdir($logDir, 0775, true); // Create logs directory if it doesn't exist
+    }
+
+    $timestamp = date('Y-m-d H:i:s');
+    $entry = "[$timestamp][$type] $message" . PHP_EOL;
+
+    file_put_contents($logFile, $entry, FILE_APPEND);
+}
+
 // Load routine data with validation
 function loadRoutineData($filePath) {
     if (!file_exists($filePath)) {
@@ -93,6 +107,9 @@ function cachedApiCall($cacheKey, $callback) {
     
     $result = $callback();
     file_put_contents($cacheFile, serialize($result));
+    
+    writeLog("load api");
+
     return $result;
 }
 
@@ -135,6 +152,7 @@ function generateCaption($prompt) {
         }
 
         $result = json_decode($response, true);
+        writeLog($result);
         return trim($result['choices'][0]['message']['content'] ?? "Something inspiring!");
     });
 }
@@ -178,6 +196,8 @@ function generateImage($prompt, $outputFile = 'output.png') {
 
     $imageData = base64_decode($result['data'][0]['b64_json']);
     file_put_contents($outputFile, $imageData);
+    
+    writeLog($outputFile);
 
     return $outputFile; // path to the saved image
 }

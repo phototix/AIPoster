@@ -484,13 +484,6 @@ if (!$id) {
                 icon.classList.toggle('bookmarked');
             });
             
-            // Share button functionality
-            const shareBtn = document.querySelector('.share-btn');
-            shareBtn.addEventListener('click', function() {
-                alert('Activity shared successfully!');
-                // In a real app, you would implement actual sharing functionality here
-            });
-            
             // Double click to like the post
             const postImage = document.querySelector('.post-image');
             postImage.addEventListener('dblclick', function() {

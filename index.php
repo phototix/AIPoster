@@ -292,11 +292,6 @@ if (!$id) {
     $selectedActivity = $data['activity'];
     $imageUrl = 'generated/' . $data['image_file'];
 }
-
-// Set security headers and continue with your HTML output
-header("Content-Security-Policy: default-src 'self'");
-header("X-Content-Type-Options: nosniff");
-header("X-Frame-Options: DENY");
 ?>
 <!DOCTYPE html>
 <html lang="en">

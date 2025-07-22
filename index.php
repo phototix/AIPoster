@@ -42,7 +42,7 @@ function displayErrorPage($message) {
 }
 
 // Display Custome Message page
-function displayCustomPage($message) {
+function displayCustomPage() {
     ?>
     <!DOCTYPE html>
     <html>
@@ -314,7 +314,8 @@ if (!$id) {
         header("Location: ?id=$id");
         exit;
     }else{
-
+        displayCustomPage();
+        exit;
     }
 
 

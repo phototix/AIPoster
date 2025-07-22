@@ -475,6 +475,10 @@ if (!$id) {
 </head>
 <body>
     <div class="container py-4">
+        <a href="/">
+            <h1>AI+Brandon</h1>
+        </a>
+        <p>Journalog meets A.I</p>
         <div class="instagram-post">
             <div class="post-header">
                 <div class="profile-pic">BC</div>

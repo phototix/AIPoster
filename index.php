@@ -164,7 +164,7 @@ function generateImage($prompt, $outputFile = null) {
     $url = 'https://api.openai.com/v1/images/generations';
 
     $data = [
-        'model' => 'gpt-image-1',
+        'model' => $config['openai']['image_model'],
         'prompt' => $prompt,
         'n' => 1,
         'size' => '1024x1024'

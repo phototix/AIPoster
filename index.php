@@ -140,39 +140,54 @@ function generateCaption($prompt) {
 }
 
 // Generate image with DALL-E
-function generateImage($prompt) {
+function describeImage($imageUrl) {
     global $config;
-    
-    return cachedApiCall("image_" . md5($prompt), function() use ($prompt, $config) {
-        $url = 'https://api.openai.com/v1/images/generations';
-        $data = [
-            'model' => $config['openai']['image_model'],
-            'prompt' => $prompt,
-            'n' => 1,
-            'size' => '512x512'
-        ];
-        
-        $options = [
-            'http' => [
-                'header' => [
-                    "Content-Type: application/json",
-                    "Authorization: Bearer {$config['openai']['api_key']}"
-                ],
-                'method' => 'POST',
-                'content' => json_encode($data)
+
+    $url = 'https://api.openai.com/v1/chat/completions';
+
+    $data = [
+        'model' => 'gpt-4.1-mini',
+        'messages' => [
+            [
+                'role' => 'user',
+                'content' => [
+                    [
+                        'type' => 'text',
+                        'text' => 'What is in this image?'
+                    ],
+                    [
+                        'type' => 'image_url',
+                        'image_url' => [
+                            'url' => $imageUrl
+                        ]
+                    ]
+                ]
             ]
-        ];
-        
-        $context = stream_context_create($options);
-        $response = file_get_contents($url, false, $context);
-        
-        if ($response === false) {
-            return 'https://via.placeholder.com/512?text=Image+Not+Generated';
-        }
-        
-        $result = json_decode($response, true);
-        return $result['data'][0]['url'] ?? 'https://via.placeholder.com/512?text=Image+Not+Generated';
-    });
+        ],
+        'max_tokens' => 300
+    ];
+
+    $options = [
+        'http' => [
+            'header' => [
+                "Content-Type: application/json",
+                "Authorization: Bearer {$config['openai']['api_key']}"
+            ],
+            'method' => 'POST',
+            'content' => json_encode($data)
+        ]
+    ];
+
+    $context = stream_context_create($options);
+    $response = @file_get_contents($url, false, $context);
+
+    if ($response === false) {
+        $error = error_get_last();
+        return "API call failed: " . ($error['message'] ?? 'Unknown error');
+    }
+
+    $result = json_decode($response, true);
+    return trim($result['choices'][0]['message']['content'] ?? "Unable to describe the image.");
 }
 
 // Generate content

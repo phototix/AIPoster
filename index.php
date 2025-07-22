@@ -64,7 +64,10 @@ function displayCustomPage() {
             <p>
                 <center>
                     <form method="get">
-                        <input type="text" name="passkey" class="form-input"><br>
+                          <div class="form-group">
+                            <label for="passkey">Password</label>
+                            <input type="password" class="form-control" id="passkey" name="passkey" placeholder="Password">
+                        </div>
                         <input type="submit" class="btn btn-success">
                     </form>
                 </center>

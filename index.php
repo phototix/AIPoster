@@ -99,16 +99,22 @@ function cachedApiCall($cacheKey, $callback) {
 // Generate caption with OpenAI
 function generateCaption($prompt) {
     global $config;
-    
+
     return cachedApiCall("caption_" . md5($prompt), function() use ($prompt, $config) {
         $url = 'https://api.openai.com/v1/chat/completions';
+
         $data = [
-            'model' => $config['openai']['caption_model'],
-            'prompt' => "Generate a 20-word Instagram caption about: $prompt",
+            'model' => $config['openai']['caption_model'], // e.g. "gpt-4.1" or "gpt-3.5-turbo"
+            'messages' => [
+                [
+                    'role' => 'user',
+                    'content' => "Write a short, catchy Instagram caption (max 20 words) about: $prompt"
+                ]
+            ],
             'max_tokens' => 50,
             'temperature' => 0.7
         ];
-        
+
         $options = [
             'http' => [
                 'header' => [
@@ -119,16 +125,17 @@ function generateCaption($prompt) {
                 'content' => json_encode($data)
             ]
         ];
-        
+
         $context = stream_context_create($options);
-        $response = file_get_contents($url, false, $context);
-        
+        $response = @file_get_contents($url, false, $context);
+
         if ($response === false) {
-            return "Enjoying my daily routine!";
+            $error = error_get_last();
+            return "API call failed: " . ($error['message'] ?? 'Unknown error');
         }
-        
+
         $result = json_decode($response, true);
-        return trim($result['choices'][0]['text'] ?? "Daily routine moment");
+        return trim($result['choices'][0]['message']['content'] ?? "Something inspiring!");
     });
 }
 

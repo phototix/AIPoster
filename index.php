@@ -152,7 +152,7 @@ function generateCaption($prompt) {
         }
 
         $result = json_decode($response, true);
-        writeLog($result);
+        writeLog($result['choices'][0]['message']['content']);
         return trim($result['choices'][0]['message']['content'] ?? "Something inspiring!");
     });
 }

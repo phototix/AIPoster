@@ -41,6 +41,38 @@ function displayErrorPage($message) {
     exit;
 }
 
+// Display Custome Message page
+function displayCustomPage($message) {
+    ?>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Auth</title>
+        <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
+            .error-container { max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 5px; }
+            .error-heading { color: #d9534f; }
+        </style>
+    </head>
+    <body>
+        <div class="error-container">
+            <h1 class="error-heading">Oops! Plese provide key to continue</h1>
+            <p><?= htmlspecialchars($message) ?></p>
+            <p>
+                <center>
+                    <form method="get">
+                        <input type="text" name="passkey"><br>
+                        <input type="submit">
+                    </form>
+                </center>
+            </p>
+        </div>
+    </body>
+    </html>
+    <?php
+    exit;
+}
+
 // Ensure config directory is not web-accessible
 define('CONFIG_DIR', __DIR__ . '/config/');
 require_once CONFIG_DIR . 'config.php';
@@ -241,44 +273,51 @@ function generateUniqueId() {
 
 // Get id from query param
 $id = $_GET['id'] ?? null;
+$passkey = $_GET['passkey'] ?? null;
 
 if (!$id) {
     // No id provided, generate new content
 
-    // Pick random activity as before
-    try {
-        $schedule = loadRoutineData($config['app']['routine_data']);
-        $selectedActivity = $schedule[array_rand($schedule)];
-    } catch (Exception $e) {
-        die("Error loading data: " . $e->getMessage());
+    if ($passkey) {
+        // Pick random activity as before
+        try {
+            $schedule = loadRoutineData($config['app']['routine_data']);
+            $selectedActivity = $schedule[array_rand($schedule)];
+        } catch (Exception $e) {
+            die("Error loading data: " . $e->getMessage());
+        }
+
+        // Generate caption prompt string
+        $captionPrompt = "At {$selectedActivity['time']}, I'm {$selectedActivity['activity']} ({$selectedActivity['actions']})";
+
+        // Generate caption
+        $caption = generateCaption($captionPrompt);
+
+        // Generate image and save locally
+        $id = generateUniqueId();
+        $imageFilename = GENERATED_DIR . $id . '.jpg';
+        $savedImage = generateImage($selectedActivity['activity'], $imageFilename);
+
+        if (!$savedImage) {
+            die("Failed to generate or save image.");
+        }
+
+        // Save JSON with caption and activity data
+        $jsonData = [
+            'caption' => $caption,
+            'activity' => $selectedActivity,
+            'image_file' => $id . '.jpg'
+        ];
+        file_put_contents(GENERATED_DIR . $id . '.json', json_encode($jsonData, JSON_PRETTY_PRINT));
+
+        // Redirect to ?id=...
+        header("Location: ?id=$id");
+        exit;
+    }else{
+
     }
 
-    // Generate caption prompt string
-    $captionPrompt = "At {$selectedActivity['time']}, I'm {$selectedActivity['activity']} ({$selectedActivity['actions']})";
 
-    // Generate caption
-    $caption = generateCaption($captionPrompt);
-
-    // Generate image and save locally
-    $id = generateUniqueId();
-    $imageFilename = GENERATED_DIR . $id . '.jpg';
-    $savedImage = generateImage($selectedActivity['activity'], $imageFilename);
-
-    if (!$savedImage) {
-        die("Failed to generate or save image.");
-    }
-
-    // Save JSON with caption and activity data
-    $jsonData = [
-        'caption' => $caption,
-        'activity' => $selectedActivity,
-        'image_file' => $id . '.jpg'
-    ];
-    file_put_contents(GENERATED_DIR . $id . '.json', json_encode($jsonData, JSON_PRETTY_PRINT));
-
-    // Redirect to ?id=...
-    header("Location: ?id=$id");
-    exit;
 } else {
     // id is provided, load existing data
 

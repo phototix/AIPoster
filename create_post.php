@@ -285,7 +285,7 @@ $passkey = $_GET['passkey'] ?? null;
 if (!$id) {
     // No id provided, generate new content
 
-    if ($passkey&&$passkey==="#Quidents64#") {
+    if ($passkey&&$passkey==="Quidents64") {
         // Pick random activity as before
         try {
             $schedule = loadRoutineData($config['app']['routine_data']);

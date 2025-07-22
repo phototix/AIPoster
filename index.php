@@ -12,7 +12,7 @@ set_error_handler(function($severity, $message, $file, $line) {
 // Exception handler
 set_exception_handler(function($e) {
     error_log("Uncaught Exception: " . $e->getMessage());
-    displayErrorPage("Something went wrong. Our team has been notified.".__DIR__);
+    displayErrorPage("Something went wrong. Our team has been notified.");
 });
 
 // Display friendly error page

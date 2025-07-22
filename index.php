@@ -158,24 +158,30 @@ function generateCaption($prompt) {
 }
 
 // Generate image with DALL-E
-function generateImage($prompt, $outputFile = 'output.png') {
+function generateImage($prompt, $outputFile = 'generated_image.png') {
     global $config;
 
     $url = 'https://api.openai.com/v1/images/generations';
 
     $data = [
         'model' => 'gpt-image-1',
-        'prompt' => $prompt
+        'prompt' => $prompt,
+        'n' => 1,
+        'size' => '1024x1024',
+        'response_format' => 'b64_json'
+    ];
+
+    $headers = [
+        "Content-Type: application/json",
+        "Authorization: Bearer {$config['openai']['api_key']}"
     ];
 
     $options = [
         'http' => [
-            'header' => [
-                "Content-Type: application/json",
-                "Authorization: Bearer {$config['openai']['api_key']}"
-            ],
-            'method' => 'POST',
-            'content' => json_encode($data)
+            'header'  => $headers,
+            'method'  => 'POST',
+            'content' => json_encode($data),
+            'ignore_errors' => true // Capture 4xx/5xx response content
         ]
     ];
 
@@ -184,21 +190,22 @@ function generateImage($prompt, $outputFile = 'output.png') {
 
     if ($response === false) {
         $error = error_get_last();
-        return "Image generation failed: " . ($error['message'] ?? 'Unknown error');
+        writeLog("Image generation failed: " . ($error['message'] ?? 'Unknown error'), 'ERROR');
+        return false;
     }
 
     $result = json_decode($response, true);
 
     if (!isset($result['data'][0]['b64_json'])) {
-        return "Invalid response from OpenAI image API.";
+        writeLog("Unexpected API response: " . $response, 'ERROR');
+        return false;
     }
 
     $imageData = base64_decode($result['data'][0]['b64_json']);
     file_put_contents($outputFile, $imageData);
-    
-    writeLog($outputFile);
 
-    return $outputFile; // path to the saved image
+    writeLog("Image successfully saved to $outputFile with prompt: $prompt", 'INFO');
+    return $outputFile;
 }
 
 // Generate content

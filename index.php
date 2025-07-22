@@ -412,7 +412,7 @@ if (!$id) {
                 <?php echo htmlspecialchars(trim($caption)); ?>
             </div>
             <div class="post-time">
-                <?php echo date('F j, Y \a\t g:i A'); ?> • Daily Routine
+                <?php echo htmlspecialchars($selectedActivity['time']); ?> • Daily Routine
             </div>
         </div>
         

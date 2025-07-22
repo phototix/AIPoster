@@ -61,7 +61,7 @@ function displayCustomPage() {
     </head>
     <body>
         <div class="error-container">
-            <h1 class="error-heading">Oops! Plese provide key to continue</h1>
+            <h1 class="error-heading">Plese provide password to continue</h1>
             <p>
                 <center>
                     <form method="get">

@@ -59,113 +59,116 @@ session_start([
     'cookie_samesite' => 'Strict'
 ]);
 
-// Helper log function (if not already defined)
 function writeLog($message, $type = 'INFO') {
     $logDir = __DIR__ . '/logs';
     $logFile = $logDir . '/error.log';
 
-    if (!is_dir($logDir)) mkdir($logDir, 0777, true);
+    if (!file_exists($logDir)) {
+        mkdir($logDir, 0775, true); // Create logs directory if it doesn't exist
+    }
 
     $timestamp = date('Y-m-d H:i:s');
     $entry = "[$timestamp][$type] $message" . PHP_EOL;
+
     file_put_contents($logFile, $entry, FILE_APPEND);
 }
 
-// Generate or load data by ID
-function getImageAndCaptionById($id, $config) {
-    $dataDir = __DIR__ . '/data';
-    if (!is_dir($dataDir)) mkdir($dataDir, 0777, true);
-
-    $jsonFile = "$dataDir/$id.json";
-    $jpgFile = "$dataDir/$id.jpg";
-
-    // If JSON + JPG exist, just read JSON and return
-    if (file_exists($jsonFile) && file_exists($jpgFile)) {
-        $json = file_get_contents($jsonFile);
-        $data = json_decode($json, true);
-        if ($data) {
-            $data['image_path'] = $jpgFile;
-            return $data;
-        }
+// Load routine data with validation
+function loadRoutineData($filePath) {
+    if (!file_exists($filePath)) {
+        throw new Exception("Routine data file not found");
     }
 
-    // Otherwise generate new image & caption
-
-    // 1. Generate caption with OpenAI Chat Completion
-    $caption = generateCaption($id, $config);
-
-    // 2. Generate image with OpenAI Images API
-    $imageUrl = generateImage($caption, $config);
-
-    if (!$imageUrl) {
-        writeLog("Failed to generate image for ID $id", 'ERROR');
-        return false;
+    $data = json_decode(file_get_contents($filePath), true);
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        throw new Exception("Invalid JSON data");
     }
 
-    // 3. Download image to $jpgFile
-    $imageData = @file_get_contents($imageUrl);
-    if ($imageData === false) {
-        writeLog("Failed to download image from $imageUrl for ID $id", 'ERROR');
-        return false;
-    }
-    file_put_contents($jpgFile, $imageData);
-
-    // 4. Save JSON with caption + image URL
-    $data = [
-        'id' => $id,
-        'caption' => $caption,
-        'image_url' => $imageUrl,
-        'image_path' => $jpgFile,
-        'created_at' => date('c')
-    ];
-
-    file_put_contents($jsonFile, json_encode($data, JSON_PRETTY_PRINT));
-
-    return $data;
+    return $data['schedule'] ?? [];
 }
 
-// Generate caption for a prompt (here prompt = id for demo)
-function generateCaption($prompt, $config) {
-    $url = 'https://api.openai.com/v1/chat/completions';
+try {
+    $schedule = loadRoutineData($config['app']['routine_data']);
+    $selectedActivity = $schedule[array_rand($schedule)];
+} catch (Exception $e) {
+    die("Error loading data: " . $e->getMessage());
+}
 
-    $data = [
-        'model' => $config['openai']['caption_model'],
-        'messages' => [
-            ['role' => 'user', 'content' => "Write a catchy Instagram caption (max 20 words) about: $prompt"]
-        ],
-        'max_tokens' => 50,
-        'temperature' => 0.7
-    ];
+// API Call with caching
+function cachedApiCall($cacheKey, $callback) {
+    global $config;
+    
+    $cacheFile = $config['app']['cache_dir'] . md5($cacheKey) . '.cache';
+    
+    // Return cached if exists and fresh (< 1 hour)
+    if (file_exists($cacheFile) && (time() - filemtime($cacheFile) < 3600)) {
+        return unserialize(file_get_contents($cacheFile));
+    }
+    
+    $result = $callback();
+    file_put_contents($cacheFile, serialize($result));
+    
+    writeLog("load api");
 
-    $options = [
-        'http' => [
-            'header' => [
-                "Content-Type: application/json",
-                "Authorization: Bearer {$config['openai']['api_key']}"
+    return $result;
+}
+
+// Generate caption with OpenAI
+function generateCaption($prompt) {
+    global $config;
+
+    return cachedApiCall("caption_" . md5($prompt), function() use ($prompt, $config) {
+        $url = 'https://api.openai.com/v1/chat/completions';
+
+        $data = [
+            'model' => $config['openai']['caption_model'], // e.g. "gpt-4.1" or "gpt-3.5-turbo"
+            'messages' => [
+                [
+                    'role' => 'user',
+                    'content' => "Write a short, catchy Instagram caption (max 20 words) about: $prompt"
+                ]
             ],
-            'method' => 'POST',
-            'content' => json_encode($data)
-        ]
-    ];
+            'max_tokens' => 50,
+            'temperature' => 0.7
+        ];
 
-    $context = stream_context_create($options);
-    $response = @file_get_contents($url, false, $context);
+        $options = [
+            'http' => [
+                'header' => [
+                    "Content-Type: application/json",
+                    "Authorization: Bearer {$config['openai']['api_key']}"
+                ],
+                'method' => 'POST',
+                'content' => json_encode($data)
+            ]
+        ];
 
-    if ($response === false) return "Enjoying my day!";
+        $context = stream_context_create($options);
+        $response = @file_get_contents($url, false, $context);
 
-    $result = json_decode($response, true);
-    return trim($result['choices'][0]['message']['content'] ?? "Enjoying my day!");
+        if ($response === false) {
+            $error = error_get_last();
+            return "API call failed: " . ($error['message'] ?? 'Unknown error');
+        }
+
+        $result = json_decode($response, true);
+        writeLog($result['choices'][0]['message']['content']);
+        return trim($result['choices'][0]['message']['content'] ?? "Something inspiring!");
+    });
 }
 
-// Generate image and return the image URL
-function generateImage($prompt, $config) {
+// Generate image with DALL-E
+function generateImage($prompt, $outputFile = null) {
+    global $config;
+
     $url = 'https://api.openai.com/v1/images/generations';
 
     $data = [
-        'model' => 'gpt-image-1',
+        'model' => $config['openai']['image_model'],
         'prompt' => $prompt,
         'n' => 1,
         'size' => '1024x1024'
+        // removed response_format
     ];
 
     $headers = [
@@ -186,59 +189,152 @@ function generateImage($prompt, $config) {
     $response = @file_get_contents($url, false, $context);
 
     if ($response === false) {
-        writeLog("Image generation request failed for prompt: $prompt", 'ERROR');
+        $error = error_get_last();
+        writeLog("Image generation failed: " . ($error['message'] ?? 'Unknown error'), 'ERROR');
         return false;
     }
 
     $result = json_decode($response, true);
+
     if (!isset($result['data'][0]['url'])) {
-        writeLog("Unexpected image generation response: $response", 'ERROR');
+        writeLog("Unexpected API response: " . $response, 'ERROR');
         return false;
     }
 
-    return $result['data'][0]['url'];
+    $imageUrl = $result['data'][0]['url'];
+
+    // If outputFile provided, download the image and save locally
+    if ($outputFile) {
+        $imageData = @file_get_contents($imageUrl);
+        if ($imageData === false) {
+            writeLog("Failed to download generated image from URL: $imageUrl", 'ERROR');
+            return false;
+        }
+        file_put_contents($outputFile, $imageData);
+        writeLog("Image saved to $outputFile from URL: $imageUrl", 'INFO');
+        return $outputFile;
+    }
+
+    // Otherwise just return the URL
+    writeLog("Image generation succeeded. URL: $imageUrl", 'INFO');
+    return $imageUrl;
 }
 
-// Main logic:
-$config = [
-    'openai' => [
-        'api_key' => 'sk-xxxxx',          // your OpenAI API key
-        'caption_model' => 'gpt-4.1'      // or gpt-3.5-turbo
-    ]
-];
+// Directory to store generated content
+define('GENERATED_DIR', __DIR__ . '/generated/');
+if (!file_exists(GENERATED_DIR)) {
+    mkdir(GENERATED_DIR, 0775, true);
+}
 
-// Check for ?id= query parameter
+// Helper to generate unique ID (you can use uniqid or random bytes)
+function generateUniqueId() {
+    return bin2hex(random_bytes(5)); // 10 hex chars
+}
+
+// Get id from query param
 $id = $_GET['id'] ?? null;
 
 if (!$id) {
-    // Generate new unique ID, redirect
-    $id = uniqid();
+    // No id provided, generate new content
+
+    // Pick random activity as before
+    try {
+        $schedule = loadRoutineData($config['app']['routine_data']);
+        $selectedActivity = $schedule[array_rand($schedule)];
+    } catch (Exception $e) {
+        die("Error loading data: " . $e->getMessage());
+    }
+
+    // Generate caption prompt string
+    $captionPrompt = "At {$selectedActivity['time']}, I'm {$selectedActivity['activity']} ({$selectedActivity['actions']})";
+
+    // Generate caption
+    $caption = generateCaption($captionPrompt);
+
+    // Generate image and save locally
+    $id = generateUniqueId();
+    $imageFilename = GENERATED_DIR . $id . '.jpg';
+    $savedImage = generateImage($selectedActivity['activity'], $imageFilename);
+
+    if (!$savedImage) {
+        die("Failed to generate or save image.");
+    }
+
+    // Save JSON with caption and activity data
+    $jsonData = [
+        'caption' => $caption,
+        'activity' => $selectedActivity,
+        'image_file' => $id . '.jpg'
+    ];
+    file_put_contents(GENERATED_DIR . $id . '.json', json_encode($jsonData, JSON_PRETTY_PRINT));
+
+    // Redirect to ?id=...
     header("Location: ?id=$id");
     exit;
+} else {
+    // id is provided, load existing data
+
+    $jsonFile = GENERATED_DIR . $id . '.json';
+
+    if (!file_exists($jsonFile)) {
+        // If file not found, optionally generate new or show error
+        die("Content not found for id: $id");
+    }
+
+    $jsonContent = file_get_contents($jsonFile);
+    $data = json_decode($jsonContent, true);
+
+    if (!$data) {
+        die("Failed to read saved content.");
+    }
+
+    $caption = $data['caption'];
+    $selectedActivity = $data['activity'];
+    $imageUrl = 'generated/' . $data['image_file'];
 }
 
-// Load or generate data by ID
-$data = getImageAndCaptionById($id, $config);
-
-if (!$data) {
-    http_response_code(500);
-    echo "Failed to generate content. Please try again later.";
-    exit;
-}
-
-// Now you can use $data['caption'] and $data['image_path'] to display on the page
+// Set security headers and continue with your HTML output
+header("Content-Security-Policy: default-src 'self'");
+header("X-Content-Type-Options: nosniff");
+header("X-Frame-Options: DENY");
 ?>
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Generated Content #<?= htmlspecialchars($id) ?></title>
+<!-- ... your head content ... -->
 </head>
 <body>
-    <h1>Caption:</h1>
-    <p><?= htmlspecialchars($data['caption']) ?></p>
+    <div class="instagram-post">
+        <div class="post-header">
+            <div class="profile-pic">BC</div>
+            <div class="username">brandon.chong</div>
+        </div>
 
-    <h2>Image:</h2>
-    <img src="<?= htmlspecialchars(str_replace(__DIR__, '', $data['image_path'])) ?>" alt="Generated Image" style="max-width:500px;" />
+        <img src="<?php echo htmlspecialchars($imageUrl); ?>" alt="<?php echo htmlspecialchars($selectedActivity['activity']); ?>" class="post-image">
+
+        <div class="post-actions">
+            <span class="action-icon">❤️</span>
+            <span class="action-icon">💬</span>
+            <span class="action-icon">↪️</span>
+            <span class="action-icon">🔖</span>
+        </div>
+
+        <div class="post-caption">
+            <span class="caption-username">brandon.chong</span>
+            <?php echo htmlspecialchars(trim($caption)); ?>
+        </div>
+
+        <div class="post-time">
+            <?php echo date('F j, Y \a\t g:i A'); ?> • Daily Routine
+        </div>
+    </div>
+
+    <div class="activity-details">
+        <h3>📅 Activity Details</h3>
+        <p><strong>⏰ Time:</strong> <?php echo htmlspecialchars($selectedActivity['time']); ?></p>
+        <p><strong>🏃 Activity:</strong> <?php echo htmlspecialchars($selectedActivity['activity']); ?></p>
+        <p><strong>🗂️ Type:</strong> <?php echo htmlspecialchars($selectedActivity['type']); ?></p>
+        <p><strong>⚡ Action:</strong> <?php echo htmlspecialchars($selectedActivity['actions']); ?></p>
+    </div>
 </body>
 </html>

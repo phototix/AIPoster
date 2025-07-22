@@ -480,9 +480,9 @@ if (!$id) {
             <img src="<?php echo htmlspecialchars($imageUrl); ?>" alt="<?php echo htmlspecialchars($selectedActivity['activity']); ?>" class="post-image">
             <div class="post-actions">
                 <span class="action-icon like-btn"><i class="far fa-heart"></i></span>
-                <span class="action-icon"><i class="far fa-comment"></i></span>
-                <span class="action-icon"><i class="far fa-paper-plane"></i></span>
-                <span class="action-icon bookmark-btn ms-auto"><i class="far fa-bookmark"></i></span>
+                <span class="action-icon" style="display:none;"><i class="far fa-comment"></i></span>
+                <span class="action-icon" style="display:none;"><i class="far fa-paper-plane"></i></span>
+                <span class="action-icon bookmark-btn ms-auto" style="display:none;"><i class="far fa-bookmark"></i></span>
             </div>
             <div class="post-caption">
                 <span class="caption-username">brandon.chong</span>

@@ -194,7 +194,7 @@
                                 <i class="fas fa-user"></i>
                             </div>
                             <div class="post-username">brandonchong${activityBadge}</div>
-                            <div class="post-time">${formattedTime}</div>
+                            <div class="post-time">${post.activity.time}</div>
                         </div>
                         <img src="/generated/${post.image_file}" class="post-image" alt="Post image">
                         <div class="post-actions">

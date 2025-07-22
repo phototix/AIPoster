@@ -185,10 +185,109 @@ header("X-Frame-Options: DENY");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Daily Routine Post</title>
     <style>
-        /* [Previous CSS styles remain exactly the same] */
+        .instagram-post {
+            width: 500px;
+            margin: 20px auto;
+            border: 1px solid #dbdbdb;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: white;
+            border-radius: 3px;
+        }
+        .post-header {
+            display: flex;
+            align-items: center;
+            padding: 14px 16px;
+            border-bottom: 1px solid #efefef;
+        }
+        .profile-pic {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin-right: 12px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+        .username {
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .post-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+        .post-actions {
+            padding: 8px 16px;
+            display: flex;
+            gap: 16px;
+        }
+        .action-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .post-caption {
+            padding: 0 16px 10px;
+            font-size: 14px;
+        }
+        .caption-username {
+            font-weight: 600;
+            margin-right: 5px;
+        }
+        .post-time {
+            padding: 0 16px 12px;
+            color: #8e8e8e;
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+        .activity-details {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background: #fafafa;
+            border-radius: 8px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     </style>
 </head>
 <body>
-    <!-- [Previous HTML structure remains exactly the same] -->
+    <div class="instagram-post">
+        <div class="post-header">
+            <div class="profile-pic">BC</div>
+            <div class="username">brandon.chong</div>
+        </div>
+        
+        <img src="<?php echo htmlspecialchars($imageUrl); ?>" alt="<?php echo htmlspecialchars($selectedActivity['activity']); ?>" class="post-image">
+        
+        <div class="post-actions">
+            <span class="action-icon">❤️</span>
+            <span class="action-icon">💬</span>
+            <span class="action-icon">↪️</span>
+            <span class="action-icon">🔖</span>
+        </div>
+        
+        <div class="post-caption">
+            <span class="caption-username">brandon.chong</span>
+            <?php echo htmlspecialchars(trim($caption)); ?>
+        </div>
+        
+        <div class="post-time">
+            <?php echo date('F j, Y \a\t g:i A'); ?> • Daily Routine
+        </div>
+    </div>
+    
+    <div class="activity-details">
+        <h3>📅 Activity Details</h3>
+        <p><strong>⏰ Time:</strong> <?php echo htmlspecialchars($selectedActivity['time']); ?></p>
+        <p><strong>🏃 Activity:</strong> <?php echo htmlspecialchars($selectedActivity['activity']); ?></p>
+        <p><strong>🗂️ Type:</strong> <?php echo htmlspecialchars($selectedActivity['type']); ?></p>
+        <p><strong>⚡ Action:</strong> <?php echo htmlspecialchars($selectedActivity['actions']); ?></p>
+    </div>
 </body>
 </html>

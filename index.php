@@ -299,6 +299,12 @@ if (!$id) {
     $caption = $data['caption'];
     $selectedActivity = $data['activity'];
     $imageUrl = 'generated/' . $data['image_file'];
+
+    $ogTitle = "Brandon Chong's Activity: " . $selectedActivity['activity'];
+    $ogDescription = $caption . " | Time: " . $selectedActivity['time'] . " | Type: " . $selectedActivity['type'];
+    $ogImage = $imageUrl;
+    $ogUrl = $pageUrl;
+
 }
 ?>
 <!DOCTYPE html>
@@ -307,6 +313,30 @@ if (!$id) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brandon Chong's Activity</title>
+
+    <?php if ($id) { ?>
+        <!-- Open Graph / Facebook Meta Tags -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="<?php echo htmlspecialchars($ogUrl); ?>">
+        <meta property="og:title" content="<?php echo htmlspecialchars($ogTitle); ?>">
+        <meta property="og:description" content="<?php echo htmlspecialchars($ogDescription); ?>">
+        <meta property="og:image" content="<?php echo htmlspecialchars($ogImage); ?>">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="twitter:domain" content="example.com">
+        <meta property="twitter:url" content="<?php echo htmlspecialchars($ogUrl); ?>">
+        <meta name="twitter:title" content="<?php echo htmlspecialchars($ogTitle); ?>">
+        <meta name="twitter:description" content="<?php echo htmlspecialchars($ogDescription); ?>">
+        <meta name="twitter:image" content="<?php echo htmlspecialchars($ogImage); ?>">
+        
+        <!-- WhatsApp Specific -->
+        <meta property="og:site_name" content="Brandon's Activity Tracker">
+        <meta property="og:image:alt" content="<?php echo htmlspecialchars($selectedActivity['activity']); ?>">
+    <?php } ?>
+
     <!-- Bootstrap 5 CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome for icons -->

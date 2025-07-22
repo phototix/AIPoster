@@ -48,6 +48,10 @@ function displayCustomPage() {
     <html>
     <head>
         <title>Auth</title>
+        <!-- Bootstrap 5 CSS CDN -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <style>
             body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
             .error-container { max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 5px; }
@@ -57,12 +61,11 @@ function displayCustomPage() {
     <body>
         <div class="error-container">
             <h1 class="error-heading">Oops! Plese provide key to continue</h1>
-            <p><?= htmlspecialchars($message) ?></p>
             <p>
                 <center>
                     <form method="get">
-                        <input type="text" name="passkey"><br>
-                        <input type="submit">
+                        <input type="text" name="passkey" class="form-input"><br>
+                        <input type="submit" class="btn btn-success">
                     </form>
                 </center>
             </p>

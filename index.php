@@ -101,7 +101,7 @@ function generateCaption($prompt) {
     global $config;
     
     return cachedApiCall("caption_" . md5($prompt), function() use ($prompt, $config) {
-        $url = 'https://api.openai.com/v1/completions';
+        $url = 'https://api.openai.com/v1/chat/completions';
         $data = [
             'model' => $config['openai']['caption_model'],
             'prompt' => "Generate a 20-word Instagram caption about: $prompt",

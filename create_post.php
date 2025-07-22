@@ -212,7 +212,7 @@ function generateImage($prompt, $outputFile = null) {
 
     $data = [
         'model' => $config['openai']['image_model'],
-        'prompt' => $prompt,
+        'prompt' => "Realistic, Nikon D780, 70-200mm f/2.8. Closeup. ".$prompt,
         'n' => 1,
         'size' => '1024x1024'
         // removed response_format

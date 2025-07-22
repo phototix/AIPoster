@@ -196,11 +196,9 @@
                             <div class="post-username">brandonchong${activityBadge}</div>
                             <div class="post-time">${formattedTime}</div>
                         </div>
-                        <img src="/var/www/post.brandon.my/generated/${post.image_file}" class="post-image" alt="Post image">
+                        <img src="/generated/${post.image_file}" class="post-image" alt="Post image">
                         <div class="post-actions">
                             <i class="far fa-heart post-action"></i>
-                            <i class="far fa-comment post-action"></i>
-                            <i class="far fa-bookmark post-action" style="float: right;"></i>
                         </div>
                         <div class="post-likes">1,024 likes</div>
                         <div class="post-caption">

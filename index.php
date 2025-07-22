@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Singapore');
 // Error handling setup
 ini_set('display_errors', 0);
 ini_set('log_errors', 1);
@@ -300,7 +301,7 @@ if (!$id) {
         $caption = generateCaption($captionPrompt);
 
         // Generate image and save locally
-        $id = generateUniqueId();
+        $id = date('Y-m-d')."-".generateUniqueId();
         $imageFilename = GENERATED_DIR . $id . '.jpg';
         $savedImage = generateImage($selectedActivity['activity'], $imageFilename);
 
@@ -312,6 +313,8 @@ if (!$id) {
         $jsonData = [
             'caption' => $caption,
             'activity' => $selectedActivity,
+            'date' => date('Y-m-d'),
+            'date' => date('H:i:s'),
             'image_file' => $id . '.jpg'
         ];
         file_put_contents(GENERATED_DIR . $id . '.json', json_encode($jsonData, JSON_PRETTY_PRINT));

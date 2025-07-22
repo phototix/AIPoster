@@ -314,7 +314,7 @@ if (!$id) {
             'caption' => $caption,
             'activity' => $selectedActivity,
             'date' => date('Y-m-d'),
-            'date' => date('H:i:s'),
+            'time' => date('H:i:s'),
             'image_file' => $id . '.jpg'
         ];
         file_put_contents(GENERATED_DIR . $id . '.json', json_encode($jsonData, JSON_PRETTY_PRINT));

@@ -1,0 +1,235 @@
+{
+  "schedule": [
+    {
+      "time": "5:00 AM",
+      "activity": "Wake up, drink water",
+      "actions": "personal",
+      "type": "routine",
+      "incident": "none"
+    },
+    {
+      "time": "5:05 AM",
+      "activity": "Stretch/Yoga (10 mins)",
+      "actions": "exercise",
+      "type": "health",
+      "incident": "none"
+    },
+    {
+      "time": "5:15 AM",
+      "activity": "Morning meditation (Buddhist chanting/prayer at KMSPKS)",
+      "actions": "spiritual",
+      "type": "religious",
+      "incident": "none"
+    },
+    {
+      "time": "5:45 AM",
+      "activity": "Shower & skincare",
+      "actions": "personal",
+      "type": "hygiene",
+      "incident": "none"
+    },
+    {
+      "time": "6:00 AM",
+      "activity": "Breakfast (healthy meal)",
+      "actions": "nutrition",
+      "type": "meal",
+      "incident": "none"
+    },
+    {
+      "time": "6:30 AM",
+      "activity": "Review daily goals/to-do list",
+      "actions": "planning",
+      "type": "productivity",
+      "incident": "none"
+    },
+    {
+      "time": "6:45 AM",
+      "activity": "Commute to work (KMSPKS)",
+      "actions": "travel",
+      "type": "logistics",
+      "incident": "none"
+    },
+    {
+      "time": "7:15 AM",
+      "activity": "Arrive at workplace, organize tasks",
+      "actions": "work",
+      "type": "preparation",
+      "incident": "none"
+    },
+    {
+      "time": "7:30 AM",
+      "activity": "Check emails/IT system alerts",
+      "actions": "work",
+      "type": "monitoring",
+      "incident": "none"
+    },
+    {
+      "time": "8:00 AM",
+      "activity": "Start work (IT project tasks)",
+      "actions": "work",
+      "type": "execution",
+      "incident": "none"
+    },
+    {
+      "time": "9:00 AM",
+      "activity": "Team meeting/stand-up",
+      "actions": "work",
+      "type": "collaboration",
+      "incident": "none"
+    },
+    {
+      "time": "9:30 AM",
+      "activity": "Focused work (coding/network maintenance)",
+      "actions": "work",
+      "type": "technical",
+      "incident": "none"
+    },
+    {
+      "time": "11:00 AM",
+      "activity": "Short break (walk/stretch)",
+      "actions": "break",
+      "type": "health",
+      "incident": "none"
+    },
+    {
+      "time": "11:15 AM",
+      "activity": "Resume work (documentation/troubleshooting)",
+      "actions": "work",
+      "type": "technical",
+      "incident": "none"
+    },
+    {
+      "time": "12:30 PM",
+      "activity": "Lunch (vegetarian meal at KMSPKS canteen)",
+      "actions": "nutrition",
+      "type": "meal",
+      "incident": "none"
+    },
+    {
+      "time": "1:00 PM",
+      "activity": "Post-lunch walk (monastery grounds)",
+      "actions": "exercise",
+      "type": "health",
+      "incident": "none"
+    },
+    {
+      "time": "1:30 PM",
+      "activity": "Check project progress (AWS/GitHub updates)",
+      "actions": "work",
+      "type": "monitoring",
+      "incident": "none"
+    },
+    {
+      "time": "2:00 PM",
+      "activity": "Client/team collaboration",
+      "actions": "work",
+      "type": "communication",
+      "incident": "none"
+    },
+    {
+      "time": "3:30 PM",
+      "activity": "Snack break (fruit/nuts)",
+      "actions": "nutrition",
+      "type": "meal",
+      "incident": "none"
+    },
+    {
+      "time": "4:00 PM",
+      "activity": "Training (Dante/Extron certifications)",
+      "actions": "work",
+      "type": "learning",
+      "incident": "none"
+    },
+    {
+      "time": "5:00 PM",
+      "activity": "Wrap up tasks, update logs",
+      "actions": "work",
+      "type": "documentation",
+      "incident": "none"
+    },
+    {
+      "time": "5:30 PM",
+      "activity": "Plan next day’s priorities",
+      "actions": "work",
+      "type": "planning",
+      "incident": "none"
+    },
+    {
+      "time": "6:00 PM",
+      "activity": "Commute home",
+      "actions": "travel",
+      "type": "logistics",
+      "incident": "none"
+    },
+    {
+      "time": "6:30 PM",
+      "activity": "Freshen up/shower",
+      "actions": "personal",
+      "type": "hygiene",
+      "incident": "none"
+    },
+    {
+      "time": "7:00 PM",
+      "activity": "Dinner (light, home-cooked)",
+      "actions": "nutrition",
+      "type": "meal",
+      "incident": "none"
+    },
+    {
+      "time": "7:30 PM",
+      "activity": "Family time/call relatives (Malaysia)",
+      "actions": "personal",
+      "type": "social",
+      "incident": "none"
+    },
+    {
+      "time": "8:00 PM",
+      "activity": "Hobby (photography/editing)",
+      "actions": "leisure",
+      "type": "creative",
+      "incident": "none"
+    },
+    {
+      "time": "8:30 PM",
+      "activity": "Study (AWS/GitHub courses)",
+      "actions": "learning",
+      "type": "professional",
+      "incident": "none"
+    },
+    {
+      "time": "9:00 PM",
+      "activity": "Wind down (read Buddhist texts)",
+      "actions": "spiritual",
+      "type": "religious",
+      "incident": "none"
+    },
+    {
+      "time": "9:30 PM",
+      "activity": "Reflect on the day/journal",
+      "actions": "personal",
+      "type": "reflection",
+      "incident": "none"
+    },
+    {
+      "time": "10:00 PM",
+      "activity": "Prepare for bed (no screens)",
+      "actions": "personal",
+      "type": "routine",
+      "incident": "none"
+    },
+    {
+      "time": "10:15 PM",
+      "activity": "Light stretches",
+      "actions": "exercise",
+      "type": "health",
+      "incident": "none"
+    },
+    {
+      "time": "10:30 PM",
+      "activity": "Sleep",
+      "actions": "rest",
+      "type": "health",
+      "incident": "none"
+    }
+  ]
+}

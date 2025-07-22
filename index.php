@@ -165,8 +165,7 @@ function generateImage($prompt, $outputFile = 'output.png') {
 
     $data = [
         'model' => 'gpt-image-1',
-        'prompt' => $prompt,
-        'response_format' => 'b64_json'
+        'prompt' => $prompt
     ];
 
     $options = [

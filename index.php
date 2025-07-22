@@ -129,7 +129,7 @@ function generateCaption($prompt) {
                 ],
                 [
                     'role' => 'system',
-                    'content' => "Write a short, catchy Instagram caption (max 20 words), output in plain text, not text decoration."
+                    'content' => "Write a short, catchy Instagram caption (max 20 words), Do not return time in output. output in plain text, not text decoration."
                 ],
                 [
                     'role' => 'user',
@@ -428,7 +428,6 @@ if (!$id) {
                     <p><strong><i class="fas fa-bolt me-2"></i>Action:</strong> <?php echo htmlspecialchars($selectedActivity['actions']); ?></p>
                 </div>
             </div>
-            <button class="btn btn-primary mt-3 share-btn"><i class="fas fa-share-alt me-2"></i>Share Activity</button>
         </div>
     </div>
 

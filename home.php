@@ -200,7 +200,6 @@
                         <div class="post-actions">
                             <i class="far fa-heart post-action"></i>
                         </div>
-                        <div class="post-likes">1,024 likes</div>
                         <div class="post-caption">
                             <span class="post-username" style="margin-right: 5px;">brandonchong</span>
                             ${post.caption}

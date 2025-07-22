@@ -12,7 +12,7 @@ set_error_handler(function($severity, $message, $file, $line) {
 // Exception handler
 set_exception_handler(function($e) {
     error_log("Uncaught Exception: " . $e->getMessage());
-    displayErrorPage("Something went wrong. Our team has been notified.<br>" . $e->getMessage());
+    displayErrorPage("Something went wrong. Our team has been notified. " . $e->getMessage());
 });
 
 // Display friendly error page
@@ -48,7 +48,7 @@ $config = include(CONFIG_DIR . 'config.php');
 
 // Set up error reporting
 error_reporting(E_ALL);
-ini_set('display_errors', 0); // Disable in production
+ini_set('display_errors', 1); // Disable in production
 ini_set('log_errors', 1);
 ini_set('error_log', __DIR__ . '/logs/error.log');
 

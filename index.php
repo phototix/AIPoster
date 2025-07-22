@@ -158,7 +158,7 @@ function generateCaption($prompt) {
 }
 
 // Generate image with DALL-E
-function generateImage($prompt, $outputFile = 'generated_image.png') {
+function generateImage($prompt, $outputFile = null) {
     global $config;
 
     $url = 'https://api.openai.com/v1/images/generations';
@@ -167,8 +167,8 @@ function generateImage($prompt, $outputFile = 'generated_image.png') {
         'model' => 'gpt-image-1',
         'prompt' => $prompt,
         'n' => 1,
-        'size' => '1024x1024',
-        'response_format' => 'b64_json'
+        'size' => '1024x1024'
+        // removed response_format
     ];
 
     $headers = [
@@ -181,7 +181,7 @@ function generateImage($prompt, $outputFile = 'generated_image.png') {
             'header'  => $headers,
             'method'  => 'POST',
             'content' => json_encode($data),
-            'ignore_errors' => true // Capture 4xx/5xx response content
+            'ignore_errors' => true
         ]
     ];
 
@@ -196,16 +196,28 @@ function generateImage($prompt, $outputFile = 'generated_image.png') {
 
     $result = json_decode($response, true);
 
-    if (!isset($result['data'][0]['b64_json'])) {
+    if (!isset($result['data'][0]['url'])) {
         writeLog("Unexpected API response: " . $response, 'ERROR');
         return false;
     }
 
-    $imageData = base64_decode($result['data'][0]['b64_json']);
-    file_put_contents($outputFile, $imageData);
+    $imageUrl = $result['data'][0]['url'];
 
-    writeLog("Image successfully saved to $outputFile with prompt: $prompt", 'INFO');
-    return $outputFile;
+    // If outputFile provided, download the image and save locally
+    if ($outputFile) {
+        $imageData = @file_get_contents($imageUrl);
+        if ($imageData === false) {
+            writeLog("Failed to download generated image from URL: $imageUrl", 'ERROR');
+            return false;
+        }
+        file_put_contents($outputFile, $imageData);
+        writeLog("Image saved to $outputFile from URL: $imageUrl", 'INFO');
+        return $outputFile;
+    }
+
+    // Otherwise just return the URL
+    writeLog("Image generation succeeded. URL: $imageUrl", 'INFO');
+    return $imageUrl;
 }
 
 // Generate content

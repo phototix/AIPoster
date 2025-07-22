@@ -1,4 +1,46 @@
 <?php
+// Error handling setup
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
+ini_set('error_log', __DIR__ . '/logs/error.log');
+
+// Custom error handler
+set_error_handler(function($severity, $message, $file, $line) {
+    throw new ErrorException($message, 0, $severity, $file, $line);
+});
+
+// Exception handler
+set_exception_handler(function($e) {
+    error_log("Uncaught Exception: " . $e->getMessage());
+    displayErrorPage("Something went wrong. Our team has been notified.");
+});
+
+// Display friendly error page
+function displayErrorPage($message) {
+    header('HTTP/1.1 500 Internal Server Error');
+    ?>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Error</title>
+        <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }
+            .error-container { max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 5px; }
+            .error-heading { color: #d9534f; }
+        </style>
+    </head>
+    <body>
+        <div class="error-container">
+            <h1 class="error-heading">Oops! Something went wrong</h1>
+            <p><?= htmlspecialchars($message) ?></p>
+            <p>Please try again later or contact support if the problem persists.</p>
+        </div>
+    </body>
+    </html>
+    <?php
+    exit;
+}
+
 // Ensure config directory is not web-accessible
 define('CONFIG_DIR', __DIR__ . '/config/');
 require_once CONFIG_DIR . 'config.php';

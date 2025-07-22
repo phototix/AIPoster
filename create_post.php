@@ -476,7 +476,7 @@ if (!$id) {
 <body>
     <div class="container py-4">
         <a href="/">
-            <h1>AI+Brandon</h1>
+            <h1>Journalog</h1>
         </a>
         <p>Journalog meets A.I</p>
         <div class="instagram-post">

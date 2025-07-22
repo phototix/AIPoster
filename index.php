@@ -133,7 +133,7 @@ function generateCaption($prompt) {
                 ],
                 [
                     'role' => 'user',
-                    'content' => "$prompt"
+                    'content' => "Write a short, catchy Instagram caption (max 20 words), Do not return time in output. output in plain text, not text decoration. $prompt"
                 ]
             ],
             'max_tokens' => 50,

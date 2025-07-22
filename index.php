@@ -124,8 +124,16 @@ function generateCaption($prompt) {
             'model' => $config['openai']['caption_model'], // e.g. "gpt-4.1" or "gpt-3.5-turbo"
             'messages' => [
                 [
+                    'role' => 'developer',
+                    'content' => "You are a Instagram post content creator as regular human."
+                ],
+                [
+                    'role' => 'system',
+                    'content' => "Write a short, catchy Instagram caption (max 20 words), output in plain text, not text decoration."
+                ],
+                [
                     'role' => 'user',
-                    'content' => "Write a short, catchy Instagram caption (max 20 words) about: $prompt"
+                    'content' => "$prompt"
                 ]
             ],
             'max_tokens' => 50,

@@ -338,7 +338,7 @@ if (!$id) {
         ];
         file_put_contents(GENERATED_DIR . $id . '.json', json_encode($jsonData, JSON_PRETTY_PRINT));
 
-        $dateTime = DateTime::createFromFormat('g:i A', $$selectedActivity['time']);
+        $dateTime = DateTime::createFromFormat('g:i A', $selectedActivity['time']);
         // Get 24-hour format values
         $hour = $dateTime->format('G'); // 24-hour format without leading zeros (0-23)
         $minute = $dateTime->format('i'); // Minutes with leading zeros (00-59)

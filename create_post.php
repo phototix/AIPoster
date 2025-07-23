@@ -282,6 +282,25 @@ function generateUniqueId() {
 $id = $_GET['id'] ?? null;
 $passkey = $_GET['passkey'] ?? null;
 
+function addCronJob($schedule, $command, $user) {
+    // Check if the cron job already exists
+    $existingCronJobs = shell_exec('crontab -l');
+    $cronJobLine = "$schedule $command";
+    
+    if (strpos($existingCronJobs, $command) !== false) {
+        return "Cron job already exists.\n";
+    }
+    
+    // Add new cron job
+    $output = shell_exec("(crontab -l 2>/dev/null; echo \"$cronJobLine\") | crontab -");
+    
+    if ($output === null) {
+        return "Cron job added successfully for user $user.\n";
+    } else {
+        return "Failed to add cron job. Error: $output\n";
+    }
+}
+
 if (!$id) {
     // No id provided, generate new content
 
@@ -318,6 +337,17 @@ if (!$id) {
             'image_file' => $id . '.jpg'
         ];
         file_put_contents(GENERATED_DIR . $id . '.json', json_encode($jsonData, JSON_PRETTY_PRINT));
+
+        $dateTime = DateTime::createFromFormat('g:i A', $$selectedActivity['time']);
+        // Get 24-hour format values
+        $hour = $dateTime->format('G'); // 24-hour format without leading zeros (0-23)
+        $minute = $dateTime->format('i'); // Minutes with leading zeros (00-59)
+
+        // Configuration
+        $cronJobCommand = 'php /var/www/post.brandon.my/sendPost.php '.$id.' >> /var/log/whatsapp_sender.log 2>&1';
+        $cronSchedule = $minute.' '.$hour.' * * *';
+        $currentUser = 'root'; // Or specify the user directly like 'www-data'
+        addCronJob($cronSchedule, $cronJobCommand, $currentUser);
 
         // Redirect to ?id=...
         header("Location: ?id=$id");

@@ -30,6 +30,7 @@ $imageFile = $data['image_file'] ?? '';
 $imageURL = 'https://post.brandon.my/generated/' . $imageFile; // Adjust URL as needed
 
 // WA API configuration
+$webApp = 'https://post.brandon.my/';
 $apiBaseUrl = 'https://whatsapp-waha.brandon.my/api/';
 $session = 'default';
 $chatId = '120363421397770615@g.us'; // Replace with your actual chat ID
@@ -110,7 +111,7 @@ if (!empty($imageFile) ){
             'url' => $imageURL
         ],
         'reply_to' => null,
-        'caption' => $sendMessage,
+        'caption' => $sendMessage." \r\nApp: ".$webApp,
         'session' => $session
     ];
     
@@ -120,7 +121,7 @@ if (!empty($imageFile) ){
     $payload = [
         'chatId' => $chatId,
         'reply_to' => null,
-        'text' => $sendMessage,
+        'text' => $sendMessage." \r\nApp: ".$webApp,
         'linkPreview' => true,
         'linkPreviewHighQuality' => false,
         'session' => $session

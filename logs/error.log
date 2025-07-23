@@ -1,0 +1,218 @@
+[22-Jul-2025 04:26:36 UTC] Uncaught Exception: require_once(/var/www/post.brandon.my/config/config.php): Failed to open stream: No such file or directory
+[22-Jul-2025 04:26:43 UTC] Uncaught Exception: require_once(/var/www/post.brandon.my/config/config.php): Failed to open stream: No such file or directory
+[22-Jul-2025 04:26:44 UTC] Uncaught Exception: require_once(/var/www/post.brandon.my/config/config.php): Failed to open stream: No such file or directory
+[22-Jul-2025 04:27:52 UTC] Uncaught Exception: require_once(/var/www/post.brandon.my/config/config.php): Failed to open stream: No such file or directory
+[22-Jul-2025 04:28:43 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/completions): Failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+[22-Jul-2025 04:32:47 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/completions): Failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+[22-Jul-2025 04:34:35 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/chat/completions): Failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+[22-Jul-2025 04:34:39 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/chat/completions): Failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+[22-Jul-2025 04:34:40 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/chat/completions): Failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+[22-Jul-2025 04:35:25 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/chat/completions): Failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+[22-Jul-2025 04:35:25 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/chat/completions): Failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+[22-Jul-2025 04:35:34 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/chat/completions): Failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+[22-Jul-2025 04:39:56 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/chat/completions): Failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+
+[22-Jul-2025 04:39:59 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/chat/completions): Failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+
+[22-Jul-2025 04:43:11 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/chat/completions): Failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+
+[22-Jul-2025 04:47:01 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/chat/completions): Failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+
+[22-Jul-2025 04:47:02 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/chat/completions): Failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+
+[22-Jul-2025 04:47:12 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/chat/completions): Failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+
+[22-Jul-2025 04:47:19 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/images/generations): Failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+
+[22-Jul-2025 04:48:20 UTC] Uncaught Exception: Call to undefined function generateImage()
+[22-Jul-2025 04:50:47 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/images/generations): Failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+
+[22-Jul-2025 04:56:48 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/images/generations): Failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+
+[22-Jul-2025 05:00:03 UTC] Uncaught Exception: Array to string conversion
+[22-Jul-2025 05:00:47 UTC] Uncaught Exception: Array to string conversion
+[22-Jul-2025 05:00:47 UTC] Uncaught Exception: Array to string conversion
+[22-Jul-2025 05:01:00 UTC] Uncaught Exception: Array to string conversion
+[2025-07-22 05:01:14][INFO] 2:00 PM vibes: Collaborating with the dream team to make magic happen! 💼✨ #TeamWork #ClientGoals
+[2025-07-22 05:01:14][INFO] load api
+[22-Jul-2025 05:01:14 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/images/generations): Failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+
+[2025-07-22 05:01:58][INFO] 7:00 PM: Light, home-cooked dinner—nourish your night the healthy way! 🥗✨ #HealthyHabits #DinnerTime
+[2025-07-22 05:01:58][INFO] load api
+[2025-07-22 05:01:58][INFO] 7:00 PM vibes: Light, home-cooked dinner for the win! Nourish your body, fuel your evening. 🌱🍽️ #HealthyEats
+[2025-07-22 05:01:58][INFO] load api
+[22-Jul-2025 05:01:58 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/images/generations): Failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+
+[22-Jul-2025 05:01:58 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/images/generations): Failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+
+[2025-07-22 05:02:00][INFO] Early birds plan their dreams. 📝✨ 6:30 AM, goals set, day ready! #MorningMotivation #GoalGetter
+[2025-07-22 05:02:00][INFO] load api
+[22-Jul-2025 05:02:01 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/images/generations): Failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+
+[2025-07-22 05:02:05][INFO] 5:00 PM vibes: Wrapping up tasks, updating logs, and closing out the workday like a boss! 💼✅
+[2025-07-22 05:02:05][INFO] load api
+[22-Jul-2025 05:02:05 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/images/generations): Failed to open stream: HTTP request failed! HTTP/1.1 400 Bad Request
+
+[2025-07-22 05:04:28][INFO] 6:30 PM reset: Time to freshen up, wash the day away, and step into my evening glow! ✨🚿
+[2025-07-22 05:04:28][INFO] load api
+[22-Jul-2025 05:04:28 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/images/generations): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+[22-Jul-2025 05:04:38 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/images/generations): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+[2025-07-22 05:06:19][INFO] 1:30 PM check-in: Tracking AWS & GitHub updates—making sure our project stays on point! #WorkMode
+[2025-07-22 05:06:19][INFO] load api
+[22-Jul-2025 05:06:19 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/images/generations): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+[22-Jul-2025 05:09:19 UTC] Uncaught Exception: file_get_contents(https://api.openai.com/v1/images/generations): Failed to open stream: HTTP request failed! HTTP/1.1 403 Forbidden
+
+[2025-07-22 05:11:38][INFO] 7:30 PM = Family o’clock! 📞💕 Calling Malaysia to catch up with my favorite people. #FamilyFirst
+[2025-07-22 05:11:38][INFO] load api
+[2025-07-22 05:11:38][ERROR] Unexpected API response: {
+  "error": {
+    "message": "Unknown parameter: 'response_format'.",
+    "type": "invalid_request_error",
+    "param": "response_format",
+    "code": "unknown_parameter"
+  }
+}
+[2025-07-22 05:11:41][ERROR] Unexpected API response: {
+  "error": {
+    "message": "Unknown parameter: 'response_format'.",
+    "type": "invalid_request_error",
+    "param": "response_format",
+    "code": "unknown_parameter"
+  }
+}
+[2025-07-22 05:11:43][ERROR] Unexpected API response: {
+  "error": {
+    "message": "Unknown parameter: 'response_format'.",
+    "type": "invalid_request_error",
+    "param": "response_format",
+    "code": "unknown_parameter"
+  }
+}
+[2025-07-22 05:11:51][INFO] 3:30 PM = snack o’clock! 🍎🥜 Fueling my afternoon with fruit & nuts. #HealthyHabits #SnackTime
+[2025-07-22 05:11:51][INFO] load api
+[2025-07-22 05:11:51][ERROR] Unexpected API response: {
+  "error": {
+    "message": "Unknown parameter: 'response_format'.",
+    "type": "invalid_request_error",
+    "param": "response_format",
+    "code": "unknown_parameter"
+  }
+}
+[2025-07-22 05:13:42][INFO] Post-lunch stroll vibes: recharging mind & body on monastery grounds. 1PM steps, serenity, and fresh air! 🌿🚶‍♀️
+[2025-07-22 05:13:42][INFO] load api
+[2025-07-22 05:13:42][ERROR] Unexpected API response: {
+  "error": {
+    "message": "Your organization must be verified to use the model `gpt-image-1`. Please go to: https://platform.openai.com/settings/organization/general and click on Verify Organization. If you just verified, it can take up to 15 minutes for access to propagate.",
+    "type": "invalid_request_error",
+    "param": null,
+    "code": null
+  }
+}
+[2025-07-22 05:15:50][INFO] It’s 12:30 PM—fueling up with a wholesome veggie lunch at KMSPKS canteen! 🥗✨ #EatWellLiveWell
+[2025-07-22 05:15:50][INFO] load api
+[2025-07-22 05:15:51][ERROR] Unexpected API response: {
+  "error": {
+    "message": "Your organization must be verified to use the model `gpt-image-1`. Please go to: https://platform.openai.com/settings/organization/general and click on Verify Organization. If you just verified, it can take up to 15 minutes for access to propagate.",
+    "type": "invalid_request_error",
+    "param": null,
+    "code": null
+  }
+}
+[2025-07-22 05:16:37][INFO] Chasing sunrise at 6:45 AM—commuting to KMSPKS, ready to conquer the day! #MorningJourney 🚆✨
+[2025-07-22 05:16:37][INFO] load api
+[2025-07-22 05:16:50][INFO] Image generation succeeded. URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-GLn1AajFAUMaP3cBElBSjGwh.png?st=2025-07-22T04%3A16%3A50Z&se=2025-07-22T06%3A16%3A50Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-21T10%3A20%3A13Z&ske=2025-07-22T10%3A20%3A13Z&sks=b&skv=2024-08-04&sig=EPkaFj7G81Du9Zj%2BxK2DmXj8q/kAtb0BEsgTCUtsPyk%3D
+[2025-07-22 05:18:34][INFO] Image generation succeeded. URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-3f7X5AEVCziU2UNvdOxAYFe3.png?st=2025-07-22T04%3A18%3A34Z&se=2025-07-22T06%3A18%3A34Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-21T10%3A28%3A35Z&ske=2025-07-22T10%3A28%3A35Z&sks=b&skv=2024-08-04&sig=kUilKMaVM17Qqb1vHhNppxIwzyC8us14hbqUJ3DRMEE%3D
+[2025-07-22 05:21:50][INFO] 6:00 PM vibes: windows down, tunes up, homebound and chasing sunsets. 🚗🌆✨ #CommuteMode
+[2025-07-22 05:21:50][INFO] load api
+[2025-07-22 05:21:56][INFO] Image generation succeeded. URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-28r3MyGxjTgGyFyQiW7n6Gpi.png?st=2025-07-22T04%3A21%3A56Z&se=2025-07-22T06%3A21%3A56Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-21T06%3A13%3A50Z&ske=2025-07-22T06%3A13%3A50Z&sks=b&skv=2024-08-04&sig=5XVOQ43ydBhTucQ5zUhuvV/mPQ%2B3i5kZxFUrc36dZa8%3D
+[2025-07-22 05:22:04][INFO] Image generation succeeded. URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-LgzElhRuyUvE6uVZ3PxFk8mI.png?st=2025-07-22T04%3A22%3A04Z&se=2025-07-22T06%3A22%3A04Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-21T19%3A38%3A51Z&ske=2025-07-22T19%3A38%3A51Z&sks=b&skv=2024-08-04&sig=wtkW04OiECuBHoRzR7YdLyZrvmmznKB5Vk%2B6AsZNKmE%3D
+[2025-07-22 05:22:11][INFO] 8:00 AM grind: diving into IT project mode—coffee in hand, code on screen. Let’s make it happen! 💻✨
+[2025-07-22 05:22:11][INFO] load api
+[2025-07-22 05:22:14][INFO] Image generation succeeded. URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-oipAhHDUOcBQVJtLaQxjOavU.png?st=2025-07-22T04%3A22%3A14Z&se=2025-07-22T06%3A22%3A14Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-21T05%3A53%3A31Z&ske=2025-07-22T05%3A53%3A31Z&sks=b&skv=2024-08-04&sig=5mTOobIjmil0uGZQCS%2B9QSQ9BTpHddkdWioDOAK5450%3D
+[2025-07-22 05:22:20][INFO] Back at it by 11:15 AM—diving into docs and troubleshooting like a pro! 💻✨ #WorkMode
+[2025-07-22 05:22:20][INFO] load api
+[2025-07-22 05:22:28][INFO] Image generation succeeded. URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-BinJgsISCnmUVXiucGCthghu.png?st=2025-07-22T04%3A22%3A28Z&se=2025-07-22T06%3A22%3A28Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-21T10%3A11%3A00Z&ske=2025-07-22T10%3A11%3A00Z&sks=b&skv=2024-08-04&sig=AhbOxb%2BK78d55XcTifSr6GdLlDfDmC8sEBR7hag8LFI%3D
+[2025-07-22 05:22:34][INFO] Image generation succeeded. URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-L5amF1jdWT5aso7eXUqqyoVP.png?st=2025-07-22T04%3A22%3A34Z&se=2025-07-22T06%3A22%3A34Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-21T11%3A17%3A00Z&ske=2025-07-22T11%3A17%3A00Z&sks=b&skv=2024-08-04&sig=DyNR52u57RJPwuIms2GJ1xVzy92dKdfRHPEpIhAUmKA%3D
+[22-Jul-2025 05:28:28 UTC] Uncaught Exception: file_put_contents(/var/www/post.brandon.my/generated/837506aacf.jpg): Failed to open stream: Permission denied
+[2025-07-22 05:28:57][INFO] 10:15 PM vibes: just me, my mat, and some light stretches before bed. Night routine unlocked! ✨🧘‍♀️
+[2025-07-22 05:28:57][INFO] load api
+[2025-07-22 05:29:16][INFO] Image saved to /var/www/post.brandon.my/generated/6f4286a8ab.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-B4wrulHeUsd3bMb3tlRvF6nP.png?st=2025-07-22T04%3A29%3A13Z&se=2025-07-22T06%3A29%3A13Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-21T10%3A24%3A24Z&ske=2025-07-22T10%3A24%3A24Z&sks=b&skv=2024-08-04&sig=eS3BvwD9Al5tjyZRNadlYSvs%2Be1HbWhg8dpKobLAw1k%3D
+[2025-07-22 05:37:00][INFO] Image saved to /var/www/post.brandon.my/generated/f30da2f189.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-HnAT7QY1Kcpmo1U9pfqoo2Wf.png?st=2025-07-22T04%3A36%3A57Z&se=2025-07-22T06%3A36%3A57Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-21T14%3A04%3A45Z&ske=2025-07-22T14%3A04%3A45Z&sks=b&skv=2024-08-04&sig=oKHhl8hR/1O7eWexh562yj49KBItmqrxeICPpVFYFN8%3D
+[2025-07-22 05:42:41][INFO] Image saved to /var/www/post.brandon.my/generated/275ea6961d.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-EC8BjSI0HxXnr23AycwXMVR4.png?st=2025-07-22T04%3A42%3A38Z&se=2025-07-22T06%3A42%3A38Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-21T16%3A46%3A42Z&ske=2025-07-22T16%3A46%3A42Z&sks=b&skv=2024-08-04&sig=JgmK3%2BjCEjFpkQLgleiSH6b16GpJODnasp9cKRQj1aE%3D
+[2025-07-22 05:45:26][INFO] Image saved to /var/www/post.brandon.my/generated/3a6f632c9c.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-fcxGAI4B9F89m78byKkVwemO.png?st=2025-07-22T04%3A45%3A22Z&se=2025-07-22T06%3A45%3A22Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-22T00%3A33%3A53Z&ske=2025-07-23T00%3A33%3A53Z&sks=b&skv=2024-08-04&sig=ySnrB1cwUU3/Vt4KkKzd/FoTMBD5TrZKDH1eMefWrkE%3D
+[2025-07-22 05:46:30][INFO] Code, coffee, and pure focus—building the future one line at a time.
+[2025-07-22 05:46:30][INFO] load api
+[2025-07-22 05:46:48][INFO] Image saved to /var/www/post.brandon.my/generated/ab6356c363.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-16VOC5zpIotIDyJ07ghH6hWP.png?st=2025-07-22T04%3A46%3A45Z&se=2025-07-22T06%3A46%3A45Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-21T15%3A24%3A14Z&ske=2025-07-22T15%3A24%3A14Z&sks=b&skv=2024-08-04&sig=jsGBewCtPEYZYpTeIowMcyGlLI2CDhlm%2BfwYXINIa94%3D
+[22-Jul-2025 05:51:23 UTC] Uncaught Exception: Undefined variable $pageUrl
+[2025-07-22 06:02:55][INFO] Home-cooked goodness on my plate tonight! Keeping it light, healthy, and oh-so-delicious. #DinnerGoals #EatWell
+[2025-07-22 06:02:55][INFO] load api
+[2025-07-22 06:03:17][INFO] Image saved to /var/www/post.brandon.my/generated/e45f18e6f8.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-9fKaH8jP5FQ7wsOGNJo5KV82.png?st=2025-07-22T05%3A03%3A13Z&se=2025-07-22T07%3A03%3A13Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-21T12%3A13%3A11Z&ske=2025-07-22T12%3A13%3A11Z&sks=b&skv=2024-08-04&sig=BwNcOCNbc1xmdmiggugRdDRFiJflfesJx8eFHrq0Enk%3D
+[22-Jul-2025 06:03:41 UTC] Uncaught Exception: Undefined variable $imageUrl
+[22-Jul-2025 06:05:13 UTC] Uncaught Exception: Undefined variable $message
+[2025-07-22 06:07:53][INFO] Starting my day with purpose—reviewing my goals and to-do list for a productive morning ahead!
+[2025-07-22 06:07:53][INFO] load api
+[2025-07-22 06:08:13][INFO] Image saved to /var/www/post.brandon.my/generated/2e00a24a11.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-18lU96sS1QxrOWNW2sDKLs8E.png?st=2025-07-22T05%3A08%3A09Z&se=2025-07-22T07%3A08%3A09Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-21T15%3A23%3A52Z&ske=2025-07-22T15%3A23%3A52Z&sks=b&skv=2024-08-04&sig=3Ep6VAZYMU9oFDNj7uoZW0WKSk1p17Ds2E5xEqlwvOI%3D
+[2025-07-22 14:18:23][INFO] Chasing dreams before sunrise, one commute at a time. KMSPKS vibes on the move!
+[2025-07-22 14:18:23][INFO] load api
+[2025-07-22 14:18:41][INFO] Image saved to /var/www/post.brandon.my/generated/2025-07-22-0a591b09ef.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-NkIh4cM2JjUdapUEbYFy3uLd.png?st=2025-07-22T05%3A18%3A37Z&se=2025-07-22T07%3A18%3A37Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-21T17%3A55%3A16Z&ske=2025-07-22T17%3A55%3A16Z&sks=b&skv=2024-08-04&sig=ToBrWiyffDkgtnbr5pDHyaL2ezkabdIdKD6C7FEsSQ4%3D
+[2025-07-22 14:27:11][INFO] Kicking off the day with fresh code and big goals. Let’s make IT happen!
+[2025-07-22 14:27:11][INFO] load api
+[2025-07-22 14:27:28][INFO] Image saved to /var/www/post.brandon.my/generated/2025-07-22-a3ac75609f.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-yIO86LDy4FttlvpfSZgiHG39.png?st=2025-07-22T05%3A27%3A24Z&se=2025-07-22T07%3A27%3A24Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-21T22%3A09%3A24Z&ske=2025-07-22T22%3A09%3A24Z&sks=b&skv=2024-08-04&sig=mqOu4LfZIDgQIS2q%2BnXBN%2B8Rm3g/fknScreSTUZ11D4%3D
+[2025-07-22 14:33:03][INFO] Checking in on those AWS and GitHub updates—progress never looked so good! Let's keep building greatness.
+[2025-07-22 14:33:03][INFO] load api
+[2025-07-22 14:33:23][INFO] Image saved to /var/www/post.brandon.my/generated/2025-07-22-1a3a244c7f.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-4y9qquMIRjsQgzp0Zp3blFiJ.png?st=2025-07-22T05%3A33%3A18Z&se=2025-07-22T07%3A33%3A18Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-21T07%3A31%3A00Z&ske=2025-07-22T07%3A31%3A00Z&sks=b&skv=2024-08-04&sig=EPwlnioUSfUrkuezq/6Hz70v8%2Bh7Ig9wsj3RS/SJg84%3D
+[2025-07-22 14:58:33][INFO] Rise and shine with a breakfast that fuels your day—healthy, delicious, and packed with nutrition!
+[2025-07-22 14:58:33][INFO] load api
+[2025-07-22 14:58:52][INFO] Image saved to /var/www/post.brandon.my/generated/2025-07-22-de6358e090.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-RTtke3HpqFnb06qGwfIk8rmS.png?st=2025-07-22T05%3A58%3A49Z&se=2025-07-22T07%3A58%3A49Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-22T05%3A55%3A34Z&ske=2025-07-23T05%3A55%3A34Z&sks=b&skv=2024-08-04&sig=s6YfaSVBXUFWyvvzyFHipozELNQM8tBkw%2BkQT5Rk/V8%3D
+[2025-07-22 15:05:47][INFO] Leveling up my skills with Dante and Extron certifications—making workdays smarter and sharper!
+[2025-07-22 15:05:47][INFO] load api
+[2025-07-22 15:06:08][INFO] Image saved to /var/www/post.brandon.my/generated/2025-07-22-ae670ea5fa.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-FxdtJC9Ac3oiEjkK7olw7POZ.png?st=2025-07-22T06%3A06%3A05Z&se=2025-07-22T08%3A06%3A05Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-21T22%3A56%3A00Z&ske=2025-07-22T22%3A56%3A00Z&sks=b&skv=2024-08-04&sig=z%2B7cAsIihvuiS9mswllSOEfYIPZL6INuapCoARJ2t%2Bk%3D
+[2025-07-22 15:12:02][INFO] Late night thoughts, pen in hand—journaling my journey, one page at a time.
+[2025-07-22 15:12:02][INFO] load api
+[2025-07-22 15:12:24][INFO] Image saved to /var/www/post.brandon.my/generated/2025-07-22-6464eaefa6.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-7PcaVWMxS4NX5sb1AI8vsKw0.png?st=2025-07-22T06%3A12%3A21Z&se=2025-07-22T08%3A12%3A21Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-22T00%3A31%3A21Z&ske=2025-07-23T00%3A31%3A21Z&sks=b&skv=2024-08-04&sig=qH2qDx3%2BqHieOmFmq43fV8aEuk4Bsidn0J07ZyQdmhA%3D
+[2025-07-22 16:06:03][INFO] Ending the day with peace and wisdom. Buddhist texts, calm mind, soulful vibes.
+[2025-07-22 16:06:03][INFO] load api
+[2025-07-22 16:06:21][INFO] Image saved to /var/www/post.brandon.my/generated/2025-07-22-097da50670.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-aWRrEEUg9zbvRC1lKOUKeCbY.png?st=2025-07-22T07%3A06%3A17Z&se=2025-07-22T09%3A06%3A17Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-22T03%3A24%3A42Z&ske=2025-07-23T03%3A24%3A42Z&sks=b&skv=2024-08-04&sig=wxdbXgVABVEqPvxLrCnr4DZm2v6cQ44z6kNi/QGLwGo%3D
+[2025-07-22 16:36:50][INFO] Starting my day with peace and purpose—morning Buddhist chanting at KMSPKS. Spiritual vibes only.
+[2025-07-22 16:36:50][INFO] load api
+[2025-07-22 16:37:08][INFO] Image saved to /var/www/post.brandon.my/generated/2025-07-22-b2ddb21a30.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-LE31gfU6By9Y2TdCwpipAK6C.png?st=2025-07-22T07%3A37%3A05Z&se=2025-07-22T09%3A37%3A05Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-21T20%3A45%3A44Z&ske=2025-07-22T20%3A45%3A44Z&sks=b&skv=2024-08-04&sig=SfNSVuPO37TTHhP6/gPvAFuyNNI12uUt2jhfOR9ryOc%3D
+[2025-07-22 16:40:21][INFO] Setting tomorrow’s goals today—success starts with a solid plan. Let’s crush those priorities!
+[2025-07-22 16:40:21][INFO] load api
+[2025-07-22 16:40:43][INFO] Image saved to /var/www/post.brandon.my/generated/2025-07-22-f3a3e3a46f.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-E6UNn6S0a132Kli4vJKnm4yG.png?st=2025-07-22T07%3A40%3A40Z&se=2025-07-22T09%3A40%3A40Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-22T01%3A14%3A16Z&ske=2025-07-23T01%3A14%3A16Z&sks=b&skv=2024-08-04&sig=T/6VJ9hesyJKoLCyW0c91a82DmCuBKngl2hWqvCrvbE%3D
+[2025-07-22 16:50:11][INFO] Trading city lights for cozy nights. Homeward bound and ready to unwind!
+[2025-07-22 16:50:11][INFO] load api
+[2025-07-22 16:50:31][INFO] Image saved to /var/www/post.brandon.my/generated/2025-07-22-5519a2973b.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-tKKoU9T36wqXjaakh6ZzeVYV.png?st=2025-07-22T07%3A50%3A27Z&se=2025-07-22T09%3A50%3A27Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-22T00%3A27%3A58Z&ske=2025-07-23T00%3A27%3A58Z&sks=b&skv=2024-08-04&sig=yj1NCD1lLxWXX4vqAfRKn2QmzK9IluBXVCpmdt2Bm4M%3D
+[2025-07-22 16:52:30][INFO] Home-cooked goodness on my plate! Keeping it light and tasty—fueling my night the nutritious way.
+[2025-07-22 16:52:30][INFO] load api
+[2025-07-22 16:52:54][INFO] Image saved to /var/www/post.brandon.my/generated/2025-07-22-4c009d09a8.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-0kmBytPDlZC4AXCRxztgta9P.png?st=2025-07-22T07%3A52%3A50Z&se=2025-07-22T09%3A52%3A50Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-21T10%3A53%3A32Z&ske=2025-07-22T10%3A53%3A32Z&sks=b&skv=2024-08-04&sig=mKgyiR/3xYcNdMCRuMBRB%2BFO30XwaVRZATxBmeZtfDM%3D
+[2025-07-22 16:54:14][INFO] Early morning hustle mode: activated. Chasing dreams one commute at a time. #OnTheMove #WorkJourney
+[2025-07-22 16:54:14][INFO] load api
+[2025-07-22 16:54:32][INFO] Image saved to /var/www/post.brandon.my/generated/2025-07-22-13b6edb201.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-fI7yAbGTIHstUGYLzIJhpUIb.png?st=2025-07-22T07%3A54%3A29Z&se=2025-07-22T09%3A54%3A29Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-22T08%3A54%3A29Z&ske=2025-07-23T08%3A54%3A29Z&sks=b&skv=2024-08-04&sig=rXkA8RONxxqq4fjiDZ00Z4qbjqhnJnWmubze9QSyXkU%3D
+[2025-07-22 17:18:18][INFO] Fresh shower, fresh vibes. Ready to take on whatever comes next!
+[2025-07-22 17:18:18][INFO] load api
+[2025-07-22 17:18:40][INFO] Image saved to /var/www/post.brandon.my/generated/2025-07-22-9103380f5d.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-LdZzqu8eUE5SVrmpTP0GpDXI.png?st=2025-07-22T08%3A18%3A36Z&se=2025-07-22T10%3A18%3A36Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-21T14%3A47%3A53Z&ske=2025-07-22T14%3A47%3A53Z&sks=b&skv=2024-08-04&sig=3/tca3tUQwsIAJaRJHMUCufHRR49JBq0%2BcykzRWiQrY%3D
+[2025-07-23 08:00:03][INFO] Snack break vibes: fueling my day with fruit and nuts for that perfect nutrition boost!
+[2025-07-23 08:00:03][INFO] load api
+[2025-07-23 08:00:21][INFO] Image saved to /var/www/post.brandon.my/generated/2025-07-23-8b188b57bf.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-kh7msb726G75ZvQaIwMuc9Os.png?st=2025-07-22T23%3A00%3A17Z&se=2025-07-23T01%3A00%3A17Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-23T00%3A00%3A17Z&ske=2025-07-24T00%3A00%3A17Z&sks=b&skv=2024-08-04&sig=fhCWUGnNvCimovfzqmZ1V1jQXSOlvqmTfAfNlmzWyK0%3D
+[2025-07-23 10:10:58][INFO] Kicking off the day with fresh code and big ideas. Ready to conquer these IT project tasks!
+[2025-07-23 10:10:58][INFO] load api
+[2025-07-23 10:11:14][INFO] Image saved to /var/www/post.brandon.my/generated/2025-07-23-aa6bca98c7.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-tVsXh2stYePbqMZOSQviarC4.png?st=2025-07-23T01%3A11%3A11Z&se=2025-07-23T03%3A11%3A11Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-22T21%3A28%3A01Z&ske=2025-07-23T21%3A28%3A01Z&sks=b&skv=2024-08-04&sig=jq1e%2BVv/W81GN4ofIdRRSweie1REWBD4wmf1q1eJBBU%3D
+[23-Jul-2025 10:11:14 Asia/Singapore] Uncaught Exception: Array to string conversion
+[2025-07-23 10:14:19][INFO] Stepping away for a mini adventure—stretch, walk, refresh! Movement fuels the mind.
+[2025-07-23 10:14:19][INFO] load api
+[2025-07-23 10:14:39][INFO] Image saved to /var/www/post.brandon.my/generated/2025-07-23-a7b7d2dafa.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-dHZyFgQWlUWOcPLT893Pt0gK.png?st=2025-07-23T01%3A14%3A36Z&se=2025-07-23T03%3A14%3A36Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-22T21%3A42%3A24Z&ske=2025-07-23T21%3A42%3A24Z&sks=b&skv=2024-08-04&sig=KPF5YjjF5KYkFG13mtt7Yu6QyFOmIQU2Fo%2BmeY7Uv/0%3D
+[23-Jul-2025 10:14:39 Asia/Singapore] Uncaught Exception: Array to string conversion
+[2025-07-23 10:15:56][INFO] Unplug, unwind, and let your dreams take over. Screens off, mind calm, ready for sweet sleep.
+[2025-07-23 10:15:56][INFO] load api
+[2025-07-23 10:16:11][INFO] Image saved to /var/www/post.brandon.my/generated/2025-07-23-86b7d5f5ca.jpg from URL: https://oaidalleapiprodscus.blob.core.windows.net/private/org-WSLqnjnZ7pd6UBU7lq3tl5eK/user-vRRzTzAEyvaT7iDXrCtQtDyz/img-kOzi2LVqyZSKEUXFDgZzSt0r.png?st=2025-07-23T01%3A16%3A07Z&se=2025-07-23T03%3A16%3A07Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=cc612491-d948-4d2e-9821-2683df3719f5&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-22T11%3A01%3A05Z&ske=2025-07-23T11%3A01%3A05Z&sks=b&skv=2024-08-04&sig=0eYqmx7kqnocODAi0L69/ibuniIXnKjmU1qWvx4H9Rw%3D

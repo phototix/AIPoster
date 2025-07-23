@@ -56,7 +56,7 @@ function callWhatsAppAPI($url, $payload) {
 }
 
 // Determine if we're sending text or image
-if (!empty($imageFile) {
+if (!empty($imageFile) ){
     // Send image with caption
     $payload = [
         'chatId' => $chatId,

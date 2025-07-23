@@ -55,6 +55,50 @@ function callWhatsAppAPI($url, $payload) {
     ];
 }
 
+function removeCronJob($command, $user = null) {
+    // Determine the user whose crontab we're modifying
+    $currentUser = get_current_user();
+    $targetUser = $user ?? $currentUser;
+    
+    // Build the appropriate crontab command
+    $crontabCmd = $targetUser === $currentUser 
+        ? 'crontab -l' 
+        : "sudo -u {$targetUser} crontab -l";
+    
+    // Get existing cron jobs
+    $existingCronJobs = shell_exec($crontabCmd . ' 2>/dev/null');
+    
+    if ($existingCronJobs === null || trim($existingCronJobs) === '') {
+        return "No existing cron jobs found for user {$targetUser}.\n";
+    }
+    
+    // Remove the specific cron job
+    $pattern = "/.*" . preg_quote(trim($command), '/') . ".*\n/";
+    $newCronJobs = preg_replace($pattern, "", $existingCronJobs);
+    
+    // Validate we actually changed something
+    if ($newCronJobs === $existingCronJobs) {
+        return "No matching cron job found to remove.\n";
+    }
+    
+    // Write the new crontab
+    $tempFile = tempnam(sys_get_temp_dir(), 'cron_');
+    file_put_contents($tempFile, $newCronJobs);
+    
+    $writeCmd = $targetUser === $currentUser
+        ? "crontab {$tempFile}"
+        : "sudo -u {$targetUser} crontab {$tempFile}";
+    
+    exec($writeCmd, $output, $returnCode);
+    unlink($tempFile);
+    
+    if ($returnCode !== 0) {
+        return "Failed to update crontab for user {$targetUser}. Error code: {$returnCode}\n";
+    }
+    
+    return "Cron job removed successfully for user {$targetUser}.\n";
+}
+
 // Determine if we're sending text or image
 if (!empty($imageFile) ){
     // Send image with caption
@@ -84,6 +128,9 @@ if (!empty($imageFile) ){
     
     $result = callWhatsAppAPI($apiBaseUrl . 'sendText', $payload);
 }
+
+$cronJobCommand = 'php /var/www/post.brandon.my/sendPost.php ';
+removeCronJob($cronJobCommand, "www-data");
 
 // Log result
 if ($result['status'] === 200) {

@@ -346,7 +346,7 @@ if (!$id) {
         // Configuration
         $cronJobCommand = 'php /var/www/post.brandon.my/sendPost.php '.$id.' >> /var/log/whatsapp_sender.log 2>&1';
         $cronSchedule = $minute.' '.$hour.' * * *';
-        $currentUser = 'root'; // Or specify the user directly like 'www-data'
+        $currentUser = 'www-data'; // Or specify the user directly like 'www-data'
         addCronJob($cronSchedule, $cronJobCommand, $currentUser);
 
         // Redirect to ?id=...

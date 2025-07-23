@@ -212,7 +212,7 @@ function generateImage($prompt, $outputFile = null) {
 
     $data = [
         'model' => $config['openai']['image_model'],
-        'prompt' => $prompt,
+        'prompt' => "Realistic image capture by Using Nikon DSLR, Lens: 70-200mm f/2.8. Closeup. Subject:".$prompt,
         'n' => 1,
         'size' => '1024x1024'
         // removed response_format
@@ -476,7 +476,7 @@ if (!$id) {
 <body>
     <div class="container py-4">
         <a href="/">
-            <h1>AI+Brandon</h1>
+            <h1>Journalog</h1>
         </a>
         <p>Journalog meets A.I</p>
         <div class="instagram-post">
